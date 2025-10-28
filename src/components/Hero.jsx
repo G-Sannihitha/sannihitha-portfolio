@@ -1,32 +1,43 @@
-import React from "react";
+import React from 'react';
 
-export default function Hero() {
+const Hero = () => {
   return (
-    <section className="section pt-28 sm:pt-32 text-center bg-gradient-to-b from-white to-neutral-50 dark:from-neutral-950 dark:to-neutral-900">
-      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-brand-500/10 text-brand-600 ring-1 ring-brand-500/20 mb-5">
-        Open to SDE / Full-Stack Internships
-      </span>
-
-      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-        Building scalable, intelligent apps<br className="hidden sm:block"/>
-        <span className="bg-gradient-to-r from-brand-500 to-brand-700 bg-clip-text text-transparent">
-          with Cloud & AI
-        </span>
-      </h1>
-
-      <p className="mt-4 max-w-2xl mx-auto text-neutral-600 dark:text-neutral-400 text-base sm:text-lg">
-        I’m a Software Engineer and M.S. CS student at IIT Chicago. I love crafting
-        thoughtful user experiences and robust backends. Highlights include <strong>Recipe Genie</strong> - an AI chef assistant - and backend engineering at <strong>NCR</strong>.
-      </p>
-
-      <div className="mt-6 flex justify-center gap-3">
-        <a href="#projects" className="inline-flex items-center rounded-lg bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 shadow-card">
-          View Projects
-        </a>
-        <a href="/Sannihitha_Gudimalla_Resume.pdf" className="inline-flex items-center rounded-lg border border-neutral-300 dark:border-neutral-700 px-5 py-2.5 hover:bg-neutral-50 dark:hover:bg-neutral-900">
-          View Resume
-        </a>
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
+      <div className="container mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-6xl font-bold text-slate-900 dark:text-white mb-6">
+            Sannihitha Gudimalla
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-slate-700 dark:text-slate-300 mb-8 font-semibold">
+            Full Stack Developer & AI Enthusiast
+          </p>
+          
+          <p className="text-lg text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Crafting scalable cloud applications and AI-driven solutions with modern technologies. 
+            Passionate about building innovative digital experiences.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a
+              href="#projects"
+              className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+              View My Work
+            </a>
+            <a
+              href="/Sannihitha_Gudimalla_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border-2 border-slate-900 text-slate-900 dark:text-white dark:border-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900"
+            >
+              View My Resume
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );
-}
+};
+
+export default Hero;

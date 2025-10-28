@@ -1,31 +1,89 @@
-import React from "react";
+import React from 'react';
 
-const groups = [
-  { title: "Languages", items: ["Python", "Java", "C++", "JavaScript/TypeScript", "SQL"] },
-  { title: "Frontend",  items: ["React", "Vite", "TailwindCSS"] },
-  { title: "Backend",   items: ["FastAPI", "Node.js", "REST APIs"] },
-  { title: "Cloud & DB",items: ["Firebase", "MySQL", "AWS", "Render"] },
-  { title: "AI/Other",  items: ["OpenAI API", "Git", "Jenkins", "Docker (basics)"] },
-];
+const Skills = () => {
+  const skillCategories = [
+    {
+      category: "Frontend",
+      skills: [
+        { name: "React", level: 90 },
+        { name: "JavaScript", level: 85 },
+        { name: "TailwindCSS", level: 80 },
+        { name: "HTML/CSS", level: 90 }
+      ]
+    },
+    {
+      category: "Backend",
+      skills: [
+        { name: "Python", level: 88 },
+        { name: "Java", level: 85 },
+        { name: "FastAPI", level: 82 },
+        { name: "Spring Boot", level: 80 }
+      ]
+    },
+    {
+      category: "AI & Cloud",
+      skills: [
+        { name: "OpenAI GPT", level: 85 },
+        { name: "AWS", level: 75 },
+        { name: "GCP", level: 80 },
+        { name: "Docker", level: 78 }
+      ]
+    },
+    {
+      category: "Databases",
+      skills: [
+        { name: "MySQL", level: 85 },
+        { name: "MongoDB", level: 80 },
+        { name: "Redis", level: 75 },
+        { name: "Firebase", level: 82 }
+      ]
+    }
+  ];
 
-export default function Skills() {
   return (
-    <section id="skills" className="section">
-      <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-6">Skills</h2>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {groups.map((g) => (
-          <div key={g.title} className="rounded-xl border border-neutral-200 dark:border-neutral-800 p-5 bg-white dark:bg-neutral-900">
-            <h3 className="font-semibold">{g.title}</h3>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {g.items.map((i) => (
-                <span key={i} className="text-xs px-2.5 py-1 rounded-md bg-neutral-100 dark:bg-neutral-800">
-                  {i}
-                </span>
-              ))}
+    <section id="skills" className="py-20 bg-gradient-to-b from-transparent to-blue-50/50 dark:to-gray-900/50">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
+            Technical Skills
+          </h2>
+          <p className="text-xl text-text-secondary max-w-2xl mx-auto">
+            A comprehensive overview of my technical expertise across various domains
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {skillCategories.map((category, index) => (
+            <div 
+              key={category.category}
+              className="glass-card rounded-2xl p-6 animate-fade-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <h3 className="text-2xl font-bold text-text-primary mb-6 text-center">
+                {category.category}
+              </h3>
+              <div className="space-y-4">
+                {category.skills.map((skill) => (
+                  <div key={skill.name}>
+                    <div className="flex justify-between mb-2">
+                      <span className="text-text-primary font-medium">{skill.name}</span>
+                      <span className="text-accent-color font-semibold">{skill.level}%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
+                      <div 
+                        className="bg-gradient-to-r from-accent-color to-accent-hover h-3 rounded-full transition-all duration-1000 ease-out"
+                        style={{ width: `${skill.level}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
-}
+};
+
+export default Skills;

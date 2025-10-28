@@ -1,25 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,jsx}"],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: "class",
   theme: {
     extend: {
-      fontFamily: {
-        sans: [
-          "Inter",
-          "ui-sans-serif",
-          "system-ui",
-          "Segoe UI",
-          "Roboto",
-          "Helvetica",
-          "Arial",
-        ],
-      },
       colors: {
-        brand: { 500: "#6366f1", 600: "#4f46e5", 700: "#4338ca" }, // Indigo
+        "primary-bg": "var(--primary-bg)",
+        "secondary-bg": "var(--secondary-bg)",
+        "text-primary": "var(--text-primary)",
+        "text-secondary": "var(--text-secondary)",
+        "accent-color": "var(--accent-color)",
+        "accent-hover": "var(--accent-hover)",
+        "glass-border": "var(--glass-border)",
       },
-      boxShadow: {
-        card: "0 12px 30px -8px rgba(0,0,0,.15)",
+      backdropBlur: {
+        xs: "2px",
+      },
+      animation: {
+        float: "float 6s ease-in-out infinite",
+        "fade-in": "fadeIn 0.5s ease-in-out",
+      },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
     },
   },

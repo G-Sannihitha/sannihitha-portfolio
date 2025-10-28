@@ -1,26 +1,78 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 
-export default function Navbar({ dark, setDark }) {
+const Navbar = () => {
+  const [activeSection, setActiveSection] = useState('home');
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+      
+      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'contact'];
+      const current = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      
+      if (current) setActiveSection(current);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = [
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Skills', href: '#skills' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Contact', href: '#contact' }
+  ];
+
   return (
-    <header className="fixed top-0 left-0 w-full bg-white/70 dark:bg-neutral-950/70 backdrop-blur-md border-b border-neutral-200/60 dark:border-neutral-800 z-50">
-      <nav className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-        <a href="#" className="font-semibold tracking-tight text-base sm:text-lg">
-          <span className="mr-1">👩‍💻</span> Sannihitha Gudimalla
-        </a>
-        <div className="flex items-center gap-6 text-sm font-medium">
-          <a href="#projects" className="hover:text-brand-600">Projects</a>
-          <a href="#experience" className="hover:text-brand-600">Experience</a>
-          <a href="#skills" className="hover:text-brand-600">Skills</a>
-          <a href="#contact" className="hover:text-brand-600">Contact</a>
-          <button
-            onClick={() => setDark(v => !v)}
-            className="rounded-md border border-neutral-300/70 dark:border-neutral-700 px-3 py-1.5 text-xs sm:text-sm hover:bg-neutral-50 dark:hover:bg-neutral-900"
-            aria-label="Toggle color scheme"
-          >
-            {dark ? "☀️ Light" : "🌙 Dark"}
+    <nav className={`fixed top-0 w-full z-40 transition-all duration-300 ${
+      isScrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-sm py-3' : 'bg-transparent py-6'
+    }`}>
+      <div className="container mx-auto px-6">
+        <div className="flex justify-between items-center">
+          {/* Logo/Name - Left side */}
+          <div className="text-xl font-bold text-gray-900 dark:text-white">
+            Sannihitha
+          </div>
+          
+          {/* Navigation Items - Center */}
+          <div className="hidden md:flex space-x-8 mr-16"> {/* Added margin-right to make space for theme toggle */}
+            {navItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className={`transition-all duration-300 font-medium ${
+                  activeSection === item.name.toLowerCase() 
+                    ? 'text-blue-600 dark:text-blue-400' 
+                    : 'text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400'
+                }`}
+              >
+                {item.name}
+              </a>
+            ))}
+          </div>
+
+          {/* Spacer for mobile - keeps layout balanced */}
+          <div className="md:hidden w-12"></div>
+
+          {/* Mobile menu button */}
+          <button className="md:hidden bg-white dark:bg-gray-800 p-2 rounded-lg shadow">
+            <i className="fas fa-bars text-gray-600 dark:text-gray-300"></i>
           </button>
         </div>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
-}
+};
+
+export default Navbar;

@@ -1,33 +1,29 @@
-import React, { useEffect, useState } from "react";
-import Navbar from "./components/Navbar.jsx";
-import Hero from "./components/Hero.jsx";
-import Projects from "./components/Projects.jsx";
-import Experience from "./components/Experience.jsx";
-import Skills from "./components/Skills.jsx";
-import Contact from "./components/Contact.jsx";
-import Footer from "./components/Footer.jsx";
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Experience from './components/Experience';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import ThemeToggle from './components/ThemeToggle';
+import './App.css';
 
-export default function App() {
-  const [dark, setDark] = useState(() =>
-    window.matchMedia?.("(prefers-color-scheme: dark)").matches
-  );
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark);
-  }, [dark]);
-
+function App() {
   return (
-    <div className="w-full min-h-screen bg-white dark:bg-neutral-950 text-neutral-900 dark:text-neutral-200">
-      <Navbar dark={dark} setDark={setDark} />
-      <main className="w-full">
-        <div className="max-w-6xl mx-auto">
-          <Hero />
-          <Projects />
-          <Experience />
-          <Skills />
-          <Contact />
-        </div>
-      </main>
+    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      <ThemeToggle />
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Experience />
+      <Contact />
       <Footer />
     </div>
   );
 }
+
+export default App;
