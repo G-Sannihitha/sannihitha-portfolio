@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root sizing so the background spans full width & height */
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling & selection */
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #e9e7ff;
+  color: #111;
+}
+
+.dark ::selection {
+  background: #363874;
+  color: #fff;
+}
+
+/* Section spacing helpers */
+.section {
+  @apply px-6 sm:px-10 py-16 sm:py-24;
+}
+
+/* Link underline style */
+.link-underline {
+  @apply underline underline-offset-4 decoration-neutral-300 hover:decoration-brand-600;
+}
