@@ -96,7 +96,7 @@ const About = () => {
             <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden shadow-2xl border-[3px] border-transparent bg-gradient-to-tr from-blue-400 via-white to-green-400 dark:from-blue-800 dark:via-gray-900 dark:to-green-700 p-[3px]">
               <div className="rounded-[1.3rem] overflow-hidden h-full">
                 <img
-                  src="/src/assets/profile.jpg"
+                  src="/profile.jpg"
                   alt="Sannihitha Gudimalla"
                   className="w-full h-full object-cover rounded-[1.3rem] transform transition-transform duration-500 group-hover:scale-105"
                 />

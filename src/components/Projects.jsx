@@ -28,7 +28,7 @@ const projects = [
     technologies: ["Python", "Flask", "Scikit-learn", "TF-IDF", "Cosine Similarity", "Scrapy"],
     category: "ai",
     github: "https://github.com/G-Sannihitha/SearchEngine_InformationRetrieval.git",
-    image: "/src/assets/SearchEngine.png"
+    image: "/SearchEngine.png"
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const projects = [
     technologies: ["Python", "Pandas", "Scikit-learn", "NLP", "K-means", "Data Visualization", "YouTube API", "Matplotlib", "Seaborn"],
     category: "data-science",
     github: "https://github.com/G-Sannihitha/Exploratory-Data-Analysis-on-Trending-YouTube-Videos.git",
-    image: "/src/assets/Exploratory data analysis.png"
+    image: "/Exploratory data analysis.png"
   },
 ];
 
