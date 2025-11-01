@@ -1,86 +1,130 @@
-import React from 'react';
+import React from "react";
 
 const Skills = () => {
   const skillCategories = [
     {
-      category: "Frontend",
+      category: "Frontend Development",
+      icon: "🎨",
       skills: [
-        { name: "React", level: 90 },
-        { name: "JavaScript", level: 85 },
-        { name: "TailwindCSS", level: 80 },
-        { name: "HTML/CSS", level: 90 }
-      ]
+        "React",
+        "JavaScript",
+        "TailwindCSS",
+        "HTML/CSS",
+        "TypeScript",
+        "Next.js",
+      ],
+      gradient: "from-blue-400 to-indigo-400",
     },
     {
-      category: "Backend",
+      category: "Backend Development",
+      icon: "⚙️",
       skills: [
-        { name: "Python", level: 88 },
-        { name: "Java", level: 85 },
-        { name: "FastAPI", level: 82 },
-        { name: "Spring Boot", level: 80 }
-      ]
+        "Python",
+        "Java",
+        "FastAPI",
+        "Spring Boot",
+        "Node.js",
+        "REST APIs",
+      ],
+      gradient: "from-green-400 to-emerald-400",
     },
     {
       category: "AI & Cloud",
+      icon: "🤖",
       skills: [
-        { name: "OpenAI GPT", level: 85 },
-        { name: "AWS", level: 75 },
-        { name: "GCP", level: 80 },
-        { name: "Docker", level: 78 }
-      ]
+        "OpenAI GPT",
+        "AWS",
+        "GCP",
+        "Docker",
+        "Machine Learning",
+        "Computer Vision",
+      ],
+      gradient: "from-purple-400 to-pink-400",
     },
     {
       category: "Databases",
-      skills: [
-        { name: "MySQL", level: 85 },
-        { name: "MongoDB", level: 80 },
-        { name: "Redis", level: 75 },
-        { name: "Firebase", level: 82 }
-      ]
-    }
+      icon: "💾",
+      skills: ["MySQL", "MongoDB", "Redis", "Firebase", "PostgreSQL", "SQLite"],
+      gradient: "from-orange-400 to-amber-400",
+    },
+  ];
+
+  const tools = [
+    "Git",
+    "GitHub",
+    "JIRA",
+    "Postman",
+    "VS Code",
+    "IntelliJ",
+    "Linux",
+    "Agile",
+    "Scrum",
+    "CI/CD",
+    "Microservices",
+    "RESTful APIs",
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gradient-to-b from-transparent to-blue-50/50 dark:to-gray-900/50">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
-            Technical Skills
-          </h2>
-          <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-            A comprehensive overview of my technical expertise across various domains
-          </p>
-        </div>
+    <section
+      id="skills"
+      className="py-24 bg-white dark:bg-gray-900 scroll-mt-24 lg:scroll-mt-32"
+    >
+      <div className="max-w-6xl mx-auto px-6 text-center">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {skillCategories.map((category, index) => (
-            <div 
-              key={category.category}
-              className="glass-card rounded-2xl p-6 animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+        {/* ✅ Section Title (Matches About Me Style) */}
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+          <span className="text-blue-600 dark:text-blue-400">Technical</span> Skills
+        </h2>
+        <p className="text-lg text-gray-600 dark:text-gray-300 mb-16 max-w-2xl mx-auto">
+          A refined overview of my expertise across software development, AI, and cloud technologies.
+        </p>
+
+        {/* ✅ Skill Category Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          {skillCategories.map((cat, i) => (
+            <div
+              key={i}
+              className="relative rounded-2xl p-8 shadow-md border border-gray-100 dark:border-gray-800 bg-white/70 dark:bg-gray-800/40 backdrop-blur-xl hover:-translate-y-2 transition-all duration-500"
             >
-              <h3 className="text-2xl font-bold text-text-primary mb-6 text-center">
-                {category.category}
+              <div className="flex items-center justify-center mb-6">
+                <div className={`p-3 rounded-full bg-gradient-to-r ${cat.gradient} text-2xl`}>
+                  {cat.icon}
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-5">
+                {cat.category}
               </h3>
-              <div className="space-y-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-text-primary font-medium">{skill.name}</span>
-                      <span className="text-accent-color font-semibold">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
-                      <div 
-                        className="bg-gradient-to-r from-accent-color to-accent-hover h-3 rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
+              <div className="flex flex-wrap justify-center gap-3">
+                {cat.skills.map((skill, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-2 text-sm font-medium bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-700 dark:to-gray-800 text-gray-800 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700 hover:shadow-md hover:scale-105 transition-all duration-300"
+                  >
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>
           ))}
         </div>
+
+        {/* ✅ Tools Section */}
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-10 shadow-inner">
+          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+            Tools & Technologies
+          </h3>
+          <div className="flex flex-wrap justify-center gap-3">
+            {tools.map((tool, index) => (
+              <span
+                key={index}
+                className="px-4 py-2 text-sm font-medium bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700 hover:border-blue-400 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-105 transition-all duration-300"
+              >
+                {tool}
+              </span>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
