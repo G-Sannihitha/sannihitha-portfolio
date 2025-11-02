@@ -32,7 +32,7 @@ const Experience = () => {
             <span className="text-blue-600 dark:text-blue-400">Work</span>{" "}
             <span className="text-gray-900 dark:text-white">Experience</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-semibold">
             My professional journey and contributions to scalable software solutions
           </p>
         </div>

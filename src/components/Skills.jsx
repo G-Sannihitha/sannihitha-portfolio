@@ -69,22 +69,23 @@ const Skills = () => {
       id="skills"
       className="py-24 bg-white dark:bg-gray-900 scroll-mt-24 lg:scroll-mt-32"
     >
-      <div className="max-w-6xl mx-auto px-6 text-center">
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Section Title */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            <span className="text-blue-600 dark:text-blue-400">Technical</span> Skills
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-semibold">
+            A refined overview of my expertise across software development, AI, and cloud technologies.
+          </p>
+        </div>
 
-        {/* ✅ Section Title (Matches About Me Style) */}
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-          <span className="text-blue-600 dark:text-blue-400">Technical</span> Skills
-        </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 mb-16 max-w-2xl mx-auto">
-          A refined overview of my expertise across software development, AI, and cloud technologies.
-        </p>
-
-        {/* ✅ Skill Category Cards */}
+        {/* Skill Category Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {skillCategories.map((cat, i) => (
             <div
               key={i}
-              className="relative rounded-2xl p-8 shadow-md border border-gray-100 dark:border-gray-800 bg-white/70 dark:bg-gray-800/40 backdrop-blur-xl hover:-translate-y-2 transition-all duration-500"
+              className="relative rounded-2xl p-8 shadow-md border border-gray-100 dark:border-gray-800 bg-white/70 dark:bg-gray-800/40 backdrop-blur-xl hover:-translate-y-2 transition-all duration-500 text-center"
             >
               <div className="flex items-center justify-center mb-6">
                 <div className={`p-3 rounded-full bg-gradient-to-r ${cat.gradient} text-2xl`}>
@@ -108,8 +109,8 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* ✅ Tools Section */}
-        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-10 shadow-inner">
+        {/* Tools Section */}
+        <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl p-10 shadow-inner text-center">
           <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
             Tools & Technologies
           </h3>
@@ -124,7 +125,6 @@ const Skills = () => {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

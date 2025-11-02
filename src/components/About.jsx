@@ -27,22 +27,46 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-[90vh] flex flex-col items-center justify-center bg-white dark:bg-gray-900 scroll-mt-24 lg:scroll-mt-32 mt-24 lg:mt-32"
+      className="min-h-[90vh] flex flex-col items-center justify-center bg-white dark:bg-gray-900 scroll-mt-24 lg:scroll-mt-32 mt-24 lg:mt-32 py-20"
     >
-      {/* ✅ Centered Section Title */}
-      <div className="text-center mb-12 px-4">
+      {/* Section Title */}
+      <div className="text-center mb-16 px-6 w-full">
         <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white">
           <span className="text-blue-600 dark:text-blue-400">About</span> Me
         </h2>
-        <p className="text-gray-600 dark:text-gray-400 text-lg mt-3 max-w-2xl mx-auto">
+        <p className="text-gray-600 dark:text-gray-400 text-lg mt-3 max-w-2xl mx-auto font-semibold">
           A quick insight into my background, passions, and professional journey.
         </p>
       </div>
 
-      {/* ✅ Content Area (Text + Image Side by Side) */}
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between px-6 lg:px-10 gap-10 lg:gap-12">
-        {/* Left: Text Section */}
-        <div className="flex-1 text-justify space-y-6">
+      {/* Content Area */}
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between px-6 lg:px-10 gap-12 lg:gap-16 w-full">
+        
+        {/* Mobile: Profile Image First */}
+        <div className="flex justify-center lg:hidden relative w-full">
+          <div className="relative w-72 h-72 group">
+            {/* Soft Glow */}
+            <div className="absolute -inset-6 bg-gradient-to-br from-blue-300/30 via-purple-300/30 to-green-300/30 rounded-[2rem] blur-3xl opacity-70 animate-pulse"></div>
+
+            {/* Gradient Frame */}
+            <div className="relative w-full h-full rounded-[1.5rem] overflow-hidden shadow-2xl border-[3px] border-transparent bg-gradient-to-tr from-blue-400 via-white to-green-400 dark:from-blue-800 dark:via-gray-900 dark:to-green-700 p-[3px]">
+              <div className="rounded-[1.3rem] overflow-hidden h-full">
+                <img
+                  src="/profile.jpg"
+                  alt="Sannihitha Gudimalla"
+                  className="w-full h-full object-cover rounded-[1.3rem] transform transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            </div>
+
+            {/* Decorative Blurs */}
+            <div className="absolute -top-8 -right-8 w-20 h-20 bg-blue-300 dark:bg-blue-800 rounded-full blur-xl opacity-40"></div>
+            <div className="absolute -bottom-8 -left-8 w-24 h-24 bg-green-300 dark:bg-green-700 rounded-full blur-xl opacity-40"></div>
+          </div>
+        </div>
+
+        {/* Text Section */}
+        <div className="flex-1 text-justify lg:text-left space-y-6">
           <div className="space-y-5 text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
             <p>
               I'm a passionate Software Engineer with a love for turning complex
@@ -86,8 +110,8 @@ const About = () => {
           </div>
         </div>
 
-        {/* Right: Profile Image */}
-        <div className="flex-1 flex justify-center lg:justify-end relative">
+        {/* Desktop: Profile Image */}
+        <div className="flex-1 flex justify-center lg:justify-end relative hidden lg:flex">
           <div className="relative w-72 h-72 lg:w-80 lg:h-80 group">
             {/* Soft Glow */}
             <div className="absolute -inset-6 bg-gradient-to-br from-blue-300/30 via-purple-300/30 to-green-300/30 rounded-[2rem] blur-3xl opacity-70 animate-pulse"></div>

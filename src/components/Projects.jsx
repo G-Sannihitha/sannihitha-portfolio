@@ -32,9 +32,9 @@ const projects = [
   },
   {
     id: 4,
-    title: "Exploratory Data Analysis on Trending YouTube Videos",
+    title: "Data Analysis on Trending YouTube Videos",
     description: "Comprehensive analysis of 40,000+ trending YouTube videos across 10 countries, identifying key success patterns through advanced clustering and NLP techniques. Uncovered optimal publishing times, title length impact, and engagement drivers using K-means clustering and sentiment analysis. Delivered actionable insights for content strategy optimization, revealing correlations between metadata features and video performance metrics.",
-    technologies: ["Python", "Pandas", "Scikit-learn", "NLP", "K-means", "Data Visualization", "YouTube API", "Matplotlib", "Seaborn"],
+    technologies: ["Python", "Pandas", "Scikit-learn", "NLP", "K-means", "Data Visualization", "Matplotlib", "Seaborn"],
     category: "data-science",
     github: "https://github.com/G-Sannihitha/Exploratory-Data-Analysis-on-Trending-YouTube-Videos.git",
     image: "/Exploratory data analysis.png"
@@ -44,19 +44,19 @@ const projects = [
 const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-white dark:bg-gray-900 scroll-mt-24 lg:scroll-mt-32">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 align-items-center">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             <span className="text-blue-600 dark:text-blue-400">Featured</span>{" "}
             <span className="text-gray-900 dark:text-white">Projects</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-semibold">
             Showcasing my work in AI, backend systems, and data analytics
           </p>
         </div>
 
-        {/* Projects Grid - 2 columns */}
+        {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
@@ -84,8 +84,8 @@ const ProjectCard = ({ project }) => {
             imageLoaded ? 'opacity-100' : 'opacity-0'
           } ${
             project.professional 
-              ? 'object-contain p-4'  // For NCR logo - contain with padding
-              : 'object-contain group-hover:scale-105'  // For all other images - contain with slight hover
+              ? 'object-contain p-4'
+              : 'object-contain group-hover:scale-105'
           }`}
           onLoad={() => setImageLoaded(true)}
           loading="lazy"

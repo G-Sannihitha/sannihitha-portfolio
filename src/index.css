@@ -2,9 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Remove all custom CSS variables and styles - let Tailwind handle everything */
+/* Ensure full coverage for dark mode */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
 
-/* Base styles */
+/* Make sure the background covers everything */
+body {
+  background-color: white;
+  transition: background-color 0.3s ease;
+}
+
+.dark body {
+  background-color: #111827;
+}
+
+/* Rest of your existing CSS... */
 * {
   margin: 0;
   padding: 0;
@@ -67,3 +85,17 @@ a:focus-visible {
     scroll-behavior: auto;
   }
 }
+/* 
+@keyframes slide-left {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-left {
+  animation: slide-left 0.3s ease-out;
+} */
