@@ -27,10 +27,7 @@ const Hero = () => {
 
           {/* Description */}
           <p className="text-lg text-gray-600 mb-12 leading-relaxed max-w-2xl mx-auto dark:text-gray-400">
-            Full-stack developer with 2+ years of experience building scalable
-            cloud applications and AI-driven solutions. Currently pursuing
-            Master’s at Illinois Institute of Technology while creating
-            innovative digital experiences.
+            Building AI-powered full-stack applications that solve real problems. Ex-NCR Software Engineer. Currently pursuing MSCS at IIT Chicago - actively seeking Software Engineer roles.
           </p>
 
           {/* CTA Buttons - Same color and style */}
