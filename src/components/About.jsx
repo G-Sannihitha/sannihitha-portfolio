@@ -15,7 +15,7 @@ const About = () => {
     {
       number: "M.S. CS",
       label: "Illinois Tech",
-      sub: "Expected Dec 2025",
+      sub: "Dec 2025",
     },
     {
       number: "5+",
@@ -69,23 +69,21 @@ const About = () => {
         <div className="flex-1 text-justify lg:text-left space-y-6">
           <div className="space-y-5 text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
             <p>
-              I'm a passionate Software Engineer with a love for turning complex
-              problems into elegant solutions. My journey in tech started with
-              curiosity and evolved into building scalable applications that
-              make a difference.
+              I'm a Software Engineer passionate about turning complex problems into
+              reliable, scalable solutions. My journey in tech began with curiosity and
+              has evolved into building production-grade applications with real-world
+              impact.
             </p>
             <p>
-              Currently advancing my expertise through a Master's in Computer
-              Science at Illinois Institute of Technology, diving deep into
-              machine learning, big data technologies, and cutting-edge software
-              architecture.
+              M.S. in Computer Science, Illinois Institute of Technology (Dec 2025), with
+              hands-on experience across backend systems, full-stack development,
+              machine learning, and cloud-native architectures.
             </p>
             <p>
-              What drives me? The thrill of creating something from nothing, the
-              challenge of optimizing performance, and the satisfaction of
-              seeing users benefit from technology I've helped build. When I'm
-              not coding, you'll find me exploring the latest in AI research,
-              contributing to open-source, or experimenting with new frameworks.
+              What drives me is building systems from the ground up, optimizing
+              performance at scale, and seeing users benefit from software I've helped
+              deliver. Outside of work, I explore applied AI, contribute to
+              open-source projects, and experiment with new tools and frameworks.
             </p>
           </div>
 

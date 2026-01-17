@@ -22,7 +22,7 @@ const Hero = () => {
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl text-gray-600 font-light mb-8 dark:text-gray-300">
-            Software Engineer & AI Specialist
+            Software Engineer | Backend, APIs and AI Systems
           </p>
 
           {/* Description */}
